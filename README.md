@@ -1,5 +1,5 @@
-## Money Converter app
+# Money Converter app
 
-# Currency converter using `https://free.currencyconverterapi.com/` API
+### Currency converter using `https://free.currencyconverterapi.com/` API
 
-# This project is bootstraped by create-react-app
+### This project is bootstraped by create-react-app

@@ -19,7 +19,7 @@ export default class Converter extends Component {
     this.state = {
       arsToUsd: 0,
       arsToEur: 0,
-      inputValue: 0,
+      inputValue: null,
     };
   }
 
@@ -82,6 +82,7 @@ export default class Converter extends Component {
               </InputGroup.Prepend>
               <FormControl
                 type="number"
+                placeholder="Ingrese el valor en pesos"
                 value={this.state.inputValue}
                 onChange={this.handleChange}
               />

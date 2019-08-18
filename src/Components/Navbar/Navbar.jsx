@@ -5,7 +5,7 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="primary" variant="dark">
           <Navbar.Brand>Money Converter</Navbar.Brand>
         </Navbar>
       </div>

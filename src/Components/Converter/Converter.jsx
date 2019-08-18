@@ -45,7 +45,7 @@ export default class Converter extends Component {
         <br />
         <Container>
           <Row>
-            <Col md={{ offset: 1 }}>
+            <Col xs={{ offset: 0 }} s sm={{ offset: 0 }} md={{ offset: 1 }}>
               <Card
                 bg="info"
                 text="white"
@@ -59,7 +59,7 @@ export default class Converter extends Component {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={{ offset: 2 }}>
+            <Col xs={{ offset: 0 }} sm={{ offset: 0 }} md={{ offset: 2 }}>
               <Card
                 bg="info"
                 text="white"

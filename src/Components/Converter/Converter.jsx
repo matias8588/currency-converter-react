@@ -53,9 +53,8 @@ export default class Converter extends Component {
               md={{ offset: 1 }}
             >
               <Card
-                bg="info"
                 text="white"
-                className="text-center"
+                className="dollar-card text-center"
                 style={{ width: "10rem" }}
               >
                 <Card.Img className="card-image" variant="top" src={Dollar} />
@@ -72,9 +71,8 @@ export default class Converter extends Component {
               md={{ offset: 2 }}
             >
               <Card
-                bg="info"
                 text="white"
-                className="text-center"
+                className="euro-card text-center"
                 style={{ width: "10rem" }}
               >
                 <Card.Img className="card-image" variant="top" src={Euro} />

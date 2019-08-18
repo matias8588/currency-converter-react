@@ -1,9 +1,17 @@
 import React, { Component } from "react";
-import { Card, InputGroup, FormControl, Table } from "react-bootstrap";
+import {
+  Card,
+  InputGroup,
+  FormControl,
+  Table,
+  Col,
+  Row,
+  Container,
+} from "react-bootstrap";
 import Dollar from "../../assets/dollar.png";
 import Euro from "../../assets/euro.png";
-import BitCoin from "../../assets/bitcoin.png";
 import axios from "axios";
+import "./style.scss";
 
 export default class Converter extends Component {
   constructor(props) {
@@ -35,27 +43,37 @@ export default class Converter extends Component {
     return (
       <div>
         <br />
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <Card style={{ width: "10rem" }}>
-                <Card.Img variant="top" src={Dollar} />
+        <Container>
+          <Row>
+            <Col md={{ offset: 1 }}>
+              <Card
+                bg="info"
+                text="white"
+                className="text-center"
+                style={{ width: "10rem" }}
+              >
+                <Card.Img className="card-image" variant="top" src={Dollar} />
                 <Card.Body>
                   <Card.Title>Dolar</Card.Title>
                   <Card.Text>${this.state.arsToUsd}</Card.Text>
                 </Card.Body>
               </Card>
-            </div>
-            <div className="col">
-              <Card style={{ width: "10rem" }}>
-                <Card.Img variant="top" src={Euro} />
+            </Col>
+            <Col md={{ offset: 2 }}>
+              <Card
+                bg="info"
+                text="white"
+                className="text-center"
+                style={{ width: "10rem" }}
+              >
+                <Card.Img className="card-image" variant="top" src={Euro} />
                 <Card.Body>
                   <Card.Title>EURO</Card.Title>
                   <Card.Text>${this.state.arsToEur}</Card.Text>
                 </Card.Body>
               </Card>
-            </div>
-          </div>
+            </Col>
+          </Row>
           <hr />
           <div className="row">
             <InputGroup className="mb-3">
@@ -89,7 +107,7 @@ export default class Converter extends Component {
               </tbody>
             </Table>
           </div>
-        </div>
+        </Container>
       </div>
     );
   }

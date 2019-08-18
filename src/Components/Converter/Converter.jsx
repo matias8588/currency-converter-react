@@ -6,11 +6,15 @@ import BitCoin from "../../assets/bitcoin.png";
 import axios from "axios";
 
 export default class Converter extends Component {
-  state = {
-    arsToUsd: 0,
-    arsToEur: 0,
-    usdConvert: 0,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      arsToUsd: 0,
+      arsToEur: 0,
+      inputValue: 0,
+    };
+  }
+
   componentDidMount() {
     axios
       .get(
@@ -24,8 +28,9 @@ export default class Converter extends Component {
       });
   }
   handleChange = e => {
-    this.setState({ [e.target.usdConvert]: e.target.value });
+    this.setState({ inputValue: e.target.value });
   };
+
   render() {
     return (
       <div>
@@ -50,32 +55,18 @@ export default class Converter extends Component {
                 </Card.Body>
               </Card>
             </div>
-
-            <div className="col">
-              <Card style={{ width: "10rem" }}>
-                <Card.Img variant="top" src={BitCoin} />
-                <Card.Body>
-                  <Card.Title>BitCoin</Card.Title>
-                  <Card.Text>
-                    ${Math.round(this.state.arsToUsd * 10144.965)}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
           </div>
           <hr />
           <div className="row">
             <InputGroup className="mb-3">
               <InputGroup.Prepend>
-                <InputGroup.Text
-                  type="number"
-                  value={this.state.usdConvert}
-                  onChange={this.handleChange}
-                >
-                  $
-                </InputGroup.Text>
+                <InputGroup.Text>$</InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl aria-label="Amount (to the nearest dollar)" />
+              <FormControl
+                type="number"
+                value={this.state.inputValue}
+                onChange={this.handleChange}
+              />
             </InputGroup>
           </div>
           <div className="row">
@@ -89,15 +80,11 @@ export default class Converter extends Component {
               <tbody>
                 <tr>
                   <td colSpan="2">Dolar</td>
-                  <td>{this.usdConvert}</td>
+                  <td>$ {this.state.inputValue * this.state.arsToUsd}</td>
                 </tr>
                 <tr>
                   <td colSpan="2">Euro</td>
-                  <td>200</td>
-                </tr>
-                <tr>
-                  <td colSpan="2">Bitcoin</td>
-                  <td>200</td>
+                  <td>$ {this.state.inputValue * this.state.arsToEur}</td>
                 </tr>
               </tbody>
             </Table>
